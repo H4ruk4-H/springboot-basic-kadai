@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>確認画面</title>
+</head>
+<body>
+    <h2>入力内容をご確認ください。</h2>
+
+    <table border="1">
+		<tr>
+		     <th style="font-weight: bold;">項目</th>
+		     <td style="font-weight: bold;">入力内容</td>
+		</tr>
+        <tr>
+            <th style="font-weight: normal;">お名前</th>
+            <td th:text="${name}"></td>
+        </tr>
+        <tr>
+            <th style="font-weight: normal;">メールアドレス</th>
+            <td th:text="${email}"></td>
+        </tr>
+        <tr>
+            <th style="font-weight: normal;">お問い合わせ内容</th>
+            <td th:text="${message}"></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form th:action="@{/form}" method="get">
+        <button type="submit">修正する</button>
+    </form>
+
+</body>
+</html>
